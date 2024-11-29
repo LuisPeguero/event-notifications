@@ -15,9 +15,10 @@ services:
       - "6379:6379"
     environment:
       <<: *default-environment
+
   event_logger:
     build:
-      context: .
+      context: ./src/
       dockerfile: Dockerfile
     environment:
       <<: *default-environment
@@ -27,17 +28,19 @@ services:
       - ./info.log:/app/info.log
     depends_on:
       - redis
+
   notification_processor:
     build:
-      context: ./
+      context: ./src/
       dockerfile: Dockerfile
     command: celery -A notification_processor worker --loglevel=info
     environment:
       <<: *default-environment
     depends_on:
       - redis
+
   flower:
-    build: ./
+    build: ./src/
     command: celery -A notification_processor flower
     ports:
       - 5555:5555

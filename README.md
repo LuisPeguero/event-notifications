@@ -1,7 +1,7 @@
-# Task Handler API
+# Event Notifications Project
 
 ## Overview
-Task Handler API is a FastAPI-based application for managing events. It includes endpoints for creating, updating, and retrieving events. The application also uses Celery for background task processing and Flower for monitoring Celery tasks.
+Event Notifications Project is a FastAPI-based application for managing events. It includes endpoints for creating, updating, and retrieving events. The application also uses Celery for background task processing and Flower for monitoring Celery tasks.
 
 ## Prerequisites
 - Docker
@@ -11,8 +11,7 @@ Task Handler API is a FastAPI-based application for managing events. It includes
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/yourusername/Task-Handler-API.git
-    cd Task-Handler-API
+    git clone https://github.com/LuisPeguero/event-notifications.git
     ```
 
 2. **Build and run the Docker containers:**
@@ -41,5 +40,7 @@ The following environment variables are used in the project and can be configure
 ## Logging
 Logs are stored in the `info.log` file in the project root directory.
 
-## License
-This project is licensed under the MIT License.
+
+## Running Tests
+
+Test run automatically on Docker image build.

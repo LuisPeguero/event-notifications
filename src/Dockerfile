@@ -7,4 +7,7 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+# Run tests
+RUN pytest tests
+
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000", "--reload"]
